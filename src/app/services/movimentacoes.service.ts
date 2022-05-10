@@ -15,4 +15,13 @@ export class MovimentacoesService {
   list(): Observable<any> {
     return this.http.get(`${baseUrl}/movimentacoes`);
   }
+
+// adicionando o método de inclusão (POST) via API
+  create(movimentacao:any): Observable<any> {
+    return this.http.post(`${baseUrl}/movimentacoes`,movimentacao);
+ }
+
+ findByIdConta(idConta:any): Observable<any> {
+  return this.http.get(`${baseUrl}/movimentacoes/${idConta}`);
+}
 }
